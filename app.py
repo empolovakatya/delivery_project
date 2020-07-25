@@ -129,8 +129,12 @@ class RegisterForm(FlaskForm):
                                         EqualTo('confirm_password', message='Пароли не совпадают!')])
     confirm_password = PasswordField('Пароль еще раз')
 
+# meals_check = Meal.query.all()
+# print(meals_check)
+if len(db.session.query(Meal).all()) == 0:
+    get_data()
 
-# get_data()
+
 @app.route('/')
 def main():
     categories_query = db.session.query(Category).all()
