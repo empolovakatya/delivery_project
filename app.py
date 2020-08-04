@@ -14,7 +14,7 @@ from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
-app.secret_key = 'Karinazadnitsa1569#'
+app.secret_key = 'KdhisHR1569#'
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
