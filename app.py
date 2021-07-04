@@ -112,19 +112,19 @@ class Order(db.Model):
 class OrderForm(FlaskForm):
     name = StringField('Ваше имя', [InputRequired()])
     address = StringField('Адрес', [InputRequired()])
-    mail = StringField('Электропочта', [InputRequired()])
+    mail = StringField('Электронная почта', [InputRequired()])
     phone = StringField('Телефон', [InputRequired()])
     submit = SubmitField('Оформить заказ')
 
 
 class LoginForm(FlaskForm):
-    mail = StringField('Электропочта',
+    mail = StringField('Электронная почта',
                        [DataRequired()])
     password = PasswordField('Пароль', [DataRequired()])
 
 
 class RegisterForm(FlaskForm):
-    mail = StringField('Электропочта', [DataRequired(), Email(message='Введите корректный e-mail')])
+    mail = StringField('Электронная почта', [DataRequired(), Email(message='Введите корректный e-mail')])
     password = PasswordField('Пароль', [DataRequired(), Length(min=5),
                                         EqualTo('confirm_password', message='Пароли не совпадают!')])
     confirm_password = PasswordField('Пароль еще раз')
